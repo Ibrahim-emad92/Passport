@@ -1,0 +1,42 @@
+<nav class="bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo / Site Name -->
+      <div class="flex-shrink-0 text-white text-xl font-bold">
+        MyApp
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden sm:flex space-x-6">
+        <a href="/" class="text-white hover:text-yellow-300 font-medium border-b-2 border-transparent hover:border-yellow-300 transition duration-300 pb-1">Home</a>
+        <a href="/login" class="text-white hover:text-yellow-300 font-medium border-b-2 border-transparent hover:border-yellow-300 transition duration-300 pb-1">Login</a>
+        <a href="/register" class="text-white hover:text-yellow-300 font-medium border-b-2 border-transparent hover:border-yellow-300 transition duration-300 pb-1">Register</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button id="menu-btn" type="button" class="text-white hover:bg-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4">
+    <div class="flex flex-col space-y-2">
+      <a href="/" class="text-white hover:text-yellow-300 py-2 border-b border-white transition">Home</a>
+      <a href="/login" class="text-white hover:text-yellow-300 py-2 border-b border-white transition">Login</a>
+      <a href="/register" class="text-white hover:text-yellow-300 py-2 border-b border-white transition">Register</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.getElementById('menu-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>

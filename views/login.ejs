@@ -1,0 +1,117 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .login-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    margin: 50px auto;
+  }
+
+  .form-title {
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+
+  .btn-primary {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  .form-icon {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: #aaa;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+   
+
+  }
+
+  .input-group input {
+    padding-left: 40px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+    width: 50%;
+
+  }
+
+  .login-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .text-center.mt-3 small {
+    font-size: 16px;
+    font-weight: 500;
+  }
+</style>
+
+<div class="container my-5">
+  <div class="login-card">
+    <div class="text-center">
+      <h2 class="form-title">Welcome Back</h2>
+    </div>
+
+    <%- messages() %>
+
+    <form action="/login" method="POST">
+      <!-- Email -->
+      <div class="form-group mb-3 input-group">
+        <i class="fa fa-envelope form-icon"></i>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          placeholder="Enter your Email"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group mb-4 input-group">
+        <i class="fa fa-lock form-icon"></i>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Enter your Password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        <i class="fa fa-sign-in-alt me-2"></i> Login
+      </button>
+    </form>
+
+    <div class="text-center mt-3">
+      <small>
+        Don't have an account? <a href="/register">Sign up here</a>
+      </small>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

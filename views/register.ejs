@@ -1,0 +1,121 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<!-- Custom styling -->
+<style>
+    body {
+        background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .register-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .form-title {
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 10px;
+    }
+
+    .form-icon {
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        color: #aaa;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        
+        border-radius: 8px; 
+        padding: 10px;
+        transition: border-color 0.3s ease;
+        
+    }
+
+    .input-group input {
+        padding-left: 40px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        transition: border-color 0.3s ease;
+
+    }
+
+    .register-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+
+    }
+</style>
+
+<div class="container my-5">
+    <div class="register-card">
+        <div class="text-center">
+
+            <h2 class="form-title">Create Your Account</h2>
+        </div>
+
+        <!-- Flash Messages -->
+        <%- messages('partials/errors.ejs',locals) %>
+
+        <form action="/register" method="POST">
+            <!-- Username -->
+            <div class="form-group mb-3 input-group">
+                <i class="fa fa-user form-icon"></i>
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3 input-group">
+                <i class="fa fa-envelope form-icon"></i>
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-3 input-group">
+                <i class="fa fa-lock form-icon"></i>
+                <input type="password" class="form-control" name="pass" placeholder="Password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group mb-4 input-group">
+                <i class="fa fa-lock form-icon"></i>
+                <input type="password" class="form-control" name="repass" placeholder="Confirm Password" required>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-block w-100" btn-primary>
+                <i class="fa fa-user-plus me-2"></i> Register
+
+            </button>
+
+           <div class="text-center mt-3">
+    <small style="font-size: 14px;">
+        Already have an account? <a href="/login">Login here</a>
+    </small>
+</div>
+        </form>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
